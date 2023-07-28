@@ -1,0 +1,87 @@
+*{ /*Reset iniciamos com o * para selecionar todos os elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif; /*Fonte Roboto ou outra fnte sem serifa*/
+}
+
+header{
+    background-color: blueviolet; /*cor plano de fundo*/
+    padding: 16px 0; /*espaçamento topo e inferior e 0 nas laterais*/
+    color: #FFF; /*Cor da fonte*/
+    display: flex; /*para deixar o botão ao lado do título*/
+    border-bottom: 12px solid #681a9c ; /*borda inferior do header*/
+    justify-content: center; /*centralizar o header*/
+    text-transform: uppercase; /*Deixa todas as letras em maiúsculo*/
+    font-style: italic; /*deixa a fonte em Italico*/
+}
+
+header button{
+    margin-left: 16px; /*margem a esquerda*/
+}
+
+form{
+    background-color: #c8d6e5; /*cor de fundo*/
+    padding: 24px 0; /*espaçamento topo/inferior e laterais*/
+    text-align: center; /*texto centralizado*/
+    display: none; /*ocultar formulário*/
+}
+
+form h2{ /*margem entre o titulo e os campos e botões*/
+    margin-bottom: 16px;
+}
+
+input, button{ /*campos* e botão*/
+    padding: 8px;
+}
+
+button{
+    background-color: #009432; /*cor de fundo*/
+    border: none; /*retira todas as bordas*/
+    cursor: pointer; /*trocar o cursor para mãozinha*/
+    font-weight: bold; /*peso da fonte em negrito*/
+    text-transform: uppercase; /*colocar em letra maiuscula*/
+    color:#FFF; /*cor do texto*/ 
+}
+
+#botao-cancelar{
+    background-color: red;
+}
+
+ul {
+    display: flex; /*para que os elementos fiquem lado a lado*/
+    flex-wrap: wrap; /*para quando chegar no limite da tela, crie uma nova linha*/
+}
+
+ul li {
+    max-width: 25%; /*largura maxima dos itens 25%*/
+    list-style: none; /*remove o . da lista, da imagem*/
+    position: relative; /*como temos um elemento com position absolute inserimos o relative no elemento pai para que se concentre*/
+    max-height: 280px; /*altura maxima*/
+    overflow-y: hidden; /*ocultar o resto da imagem que ultrapasse a altura limite*/
+}
+
+ul li img {
+    width: 100%; /*imagem ocupa 100 da área*/
+}
+
+.overlay-imagem-link { /*. + nome da classe*/
+    padding: 16px; /*espaçamento interno*/
+    background-color: rgba(0, 0, 0, 0.7); /*Utzr RGBA qnd trabalhar com transparencia*/
+    position: absolute; /*posiocionar o elemento do canto inferior direito*/
+    bottom: 0; /*vai ficar na extremidade*/
+    left: 0;
+    width: 100%; /*largura*/
+    opacity: 0; /*escala 0 oculta a barra*/
+    transition: all ease .6s; /*transição de opacidade*/
+}
+
+.overlay-imagem-link a {
+    color: #FFF;
+    text-decoration: none; /*remove o underline*/
+    font-size: 12px;
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
